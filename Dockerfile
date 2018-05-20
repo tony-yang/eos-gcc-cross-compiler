@@ -16,7 +16,8 @@ RUN apt-get update && apt-get install -y \
     python3-pip \
     texinfo \
     wget \
- && ln -s /usr/bin/python3 /usr/bin/python
+ && ln -s /usr/bin/python3 /usr/bin/python \
+ && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /root
 
@@ -36,6 +37,7 @@ RUN mkdir -p ${SRC} \
  && ../binutils-2.30/configure --target=${TARGET} --prefix="${PREFIX}" --with-sysroot --disable-nls --disable-werror \
  && make \
  && make install \
+ && make clean \
  && cd ${SRC} \
  && rm -rf binutils-2.30.tar.gz binutils-2.30
 
@@ -49,5 +51,6 @@ RUN cd ${SRC} \
  && make all-target-libgcc \
  && make install-gcc \
  && make install-target-libgcc \
+ && make clean \
  && cd ${SRC} \
  && rm -rf gcc-5.5.0.tar.gz gcc-5.5.0
