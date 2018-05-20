@@ -9,7 +9,7 @@ Clone this repo and build the docker image
 docker build -t eos-xcompiler .
 ```
 
-# References
+## References
 Download the binutils source code: https://mirrors.sorengard.com/gnu/binutils/binutils-2.30.tar.gz
 
 Download the gcc source code: https://bigsearcher.com/mirrors/gcc/releases/gcc-5.5.0/gcc-5.5.0.tar.gz
