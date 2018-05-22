@@ -12,6 +12,7 @@ RUN apt-get update && apt-get install -y \
     libisl-dev \
     libmpc-dev \
     libmpfr-dev \
+    nasm \
     python3 \
     python3-pip \
     texinfo \
